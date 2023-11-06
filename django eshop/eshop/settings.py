@@ -28,12 +28,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG') == 'True'
+DEBUG = os.environ.get('DEBUG') == 'True'
 
 
-DEBUG = False
+# DEBUG = False
 
-ALLOWED_HOSTS = ['http://127.0.0.1:8000/']
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -90,6 +90,11 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+
+REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'utils.custom_exception_handler.custom_exception_handler'
 }
 
 
