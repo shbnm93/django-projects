@@ -71,6 +71,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'greatcart.wsgi.application'
 
+AUTH_USER_EMAIL = 'accounts.Account'
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
